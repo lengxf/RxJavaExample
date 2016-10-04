@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">RxJava2-Android-Samples</string>
+    <string name="doSomeWork">doSomeWork</string>
+    <string name="simple">Simple</string>
+    <string name="map">Map</string>
+    <string name="zip">Zip</string>
+    <string name="disposable">Disposable</string>
+    <string name="take">Take</string>
+    <string name="timer">Timer</string>
+    <string name="interval">Interval</string>
+    <string name="SingleObserver">SingleObserver</string>
+    <string name="CompletableObserver">CompletableObserver</string>
+    <string name="Flowable">Flowable</string>
+    <string name="reduce">Reduce</string>
+    <string name="buffer">Buffer</string>
+    <string name="filter">Filter</string>
+    <string name="skip">Skip</string>
+    <string name="replay">Replay</string>
+    <string name="concat">Concat</string>
+    <string name="merge">Merge</string>
+    <string name="defer">Defer</string>
+    <string name="distinct">Distinct</string>
+    <string name="last">Last</string>
+</resources>
