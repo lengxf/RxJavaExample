@@ -58,7 +58,7 @@ captures/
 local.properties
 
 # Documents
-docs/
+#docs/
 
 
 # signing keystore files
