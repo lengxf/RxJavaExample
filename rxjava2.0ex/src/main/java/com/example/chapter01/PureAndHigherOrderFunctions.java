@@ -1,8 +1,8 @@
 package com.example.chapter01;
 
-import java.util.function.Function;
-import java.util.function.Predicate;
 
+import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 
 /**
  * Demonstrates pure and higher order functions.
@@ -10,7 +10,7 @@ import java.util.function.Predicate;
  * @author meddle
  */
 public class PureAndHigherOrderFunctions {
-	public void run() {
+	public void run() throws Exception {
 		// A pure function - no side effects
 		Predicate<Integer> even =
 				(number) -> number % 2 == 0;
@@ -62,11 +62,11 @@ public class PureAndHigherOrderFunctions {
 	 * A higher order function - sums the results of two other functions, passed to it as parameters.
 	 */
 	public static <T, R> int highSum(Function<T, Integer> f1,
-			Function<R, Integer> f2, T data1, R data2) {
+			Function<R, Integer> f2, T data1, R data2) throws Exception {
 		return f1.apply(data1) + f2.apply(data2);
 	}
 
-	public static <T> int highSum(Function<T, Integer> f, T data1, T data2) {
+	public static <T> int highSum(Function<T, Integer> f, T data1, T data2) throws Exception {
 		return highSum(f, f, data1, data2);
 	}
 
@@ -77,7 +77,7 @@ public class PureAndHigherOrderFunctions {
 		return (String name) -> greeting + " " + name + "!";
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		new PureAndHigherOrderFunctions().run();
 	}
 
