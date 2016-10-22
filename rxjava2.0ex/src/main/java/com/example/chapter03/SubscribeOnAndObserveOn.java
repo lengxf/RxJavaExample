@@ -5,6 +5,8 @@ import com.example.common.Program;
 import java.util.concurrent.CountDownLatch;
 
 import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 import static com.example.common.Helpers.debug;
@@ -61,5 +63,37 @@ public class SubscribeOnAndObserveOn implements Program {
 
 	public static void main(String[] args) {
 		new SubscribeOnAndObserveOn().run();
+
+		Observable<Integer> values = Observable.create(o -> {
+			o.onNext(1);
+			o.onNext(2);
+			o.onError(new Exception("Oops"));
+		});
+
+		values
+				.onErrorResumeNext(Observable.just(Integer.MAX_VALUE))
+				.subscribe(new Observer<Integer>() {
+					@Override
+					public void onSubscribe(Disposable d) {
+
+					}
+
+					@Override
+					public void onNext(Integer value) {
+						System.out.println(value);
+					}
+
+					@Override
+					public void onError(Throwable e) {
+						System.out.println(e.toString());
+					}
+
+					@Override
+					public void onComplete() {
+						System.out.println("complete");
+					}
+				});
+
+
 	}
 }
